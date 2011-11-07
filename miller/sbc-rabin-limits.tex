@@ -1,19 +1,20 @@
-\documentclass[font=plain,espaco=duplo,tocpage=plain,appendix=Name,floatnumber=continuous]{abnt}
-\usepackage[bookmarks,colorlinks=true,citecolor=black,urlcolor=blue,linkcolor=black,pdfpagemode=UseNone]{hyperref}
-\usepackage[centertags]{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
+\documentclass[font=plain,espaco=duplo,appendix=Name,floatnumber=continuous]{abnt}
+\usepackage{hyperref}
+%\usepackage[centertags]{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
 %\usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage[brazil]{babel}
-\usepackage[alf,abnt-repeated-author-omit=yes]{abntcite}
-\usepackage{url}
-\usepackage{winfonts}
-\usepackage{txfonts}
+\usepackage[alf]{abntcite}
+%\usepackage{url}
+\usepackage{graphicx}
+%\usepackage{winfonts}
+%\usepackage{txfonts}
 
-\fontfamily{arial}\selectfont
-\renewcommand{\rmdefault}{arial}
+%\fontfamily{arial}\selectfont
+%\renewcommand{\rmdefault}{arial}
 
 % Math -------------------------------------------------------------------
 %\newtheorem{theorem}{Teorema}{\bfseries}{\itshape}
@@ -32,14 +33,13 @@
 
 %\sloppy
 
-\begin{document} 
+\title{Teorema de Miler-Rabin\\Uma demonstração em Casos}
 
 %           #1          #2             #3           #4              #5
 %\autorPoli{firstnames}{firstinitials}{middlenames}{middleinitials}{surname}
 %\autorPoli{João Marco}{J.M.}{Maciel}{M.}{da Silva}
 \author{João Marco Maciel da Silva}
 
-\title{Teorema de Miler-Rabin\\Uma demonstração em Casos}
 
 %\orientador{<Nome do Orientador>}
 
@@ -86,6 +86,8 @@
 
 \address{Bacharelando em Ciências da Computação\\Instituto de Matemática e Estatística -- Universidade de São Paulo~\(USP)\\  \email{jaodsilv@linux.ime.usp.br}}
 
+\begin{document} 
+
 
 %% Indice
 %\renewcommand{\contentsname}{ndice}
@@ -101,7 +103,7 @@
 \end{resumo}
 
 
-\section{Introdução}
+\chapter{Introdução}
 
 Antes de \cite{euclides:00}, os gregos de escolas anteriores, como a de Pitágoras, estavam interessados pelo estudo dos números primos pelas suas propriedades Numerológicas e Místicas.\\
 Ainda antes de Euclides alguns teoremas sobre primos já haviam sido provadas, porém sem a formalidade que viria depois. \\
@@ -109,23 +111,23 @@ Após \cite{euclides:00}, os números primos começaram ser exaustivamente estudado
 Um dos tópicos da teoria dos números é a questo de como dizer, dado um nmero inteiro qualquer, se é primo ou composto de forma eficinte. O primeiro método  o crivo de Erastotenes, de 200A.C., muito mais adiante temos o \textit{teste determinstico de Miller}~\cite{miller1976riemann}, este, porém, utiliza a \textit{Hipótese Extendida de Riemann}, que ainda não foi provada. Poucos anos depois temos ~\cite{rabin1980probabilistic} onde ele mostra um novo teste de primalidade probabilístico baseado no ~\textit{teste de Miller}, este ficou conhecido como ~\textit{teste de Miller-Rabin}. Muitos outros fizeram trabalhos baseados nestes dois, entre \cite{bach:80}, \cite{dlp:93}, \cite{jaeschke:93}, \cite{agp:94}, \cite{zhatang:03}, \cite{schoof:04}, \cite{hurd}, \cite{macintosh:07}, \cite{jsozik:10} entre outros trabalhos interessantes.\\
 O artigo está organizado da seguinte maneira: na seção 2 encontram-se definições e teoremas(sem a respectiva demonstração) pré-requisitos para a leitura seguinte com a apresentação do \textit{teste de Miller-Rabin} e a definição de \textit{pseudo-primo forte} ao final, na seção 3 e suas respectivas subseções encontra-se uma demonstração alternativa para o \textit{Teorema de Miller-Rabin}, nas subseções desta são explorados e discutidos os casos usados para demonstrar o teorema, a seção 5 conclui o artigo.
 
-\section{Definies e Teoremas Anteriores}
+\chapter{Definies e Teoremas Anteriores}
 Aneis de Inteiros
 
 
-\section{Teorema de Miller-Rabin}
+\chapter{Teorema de Miller-Rabin}
 %enunciado do teorema de miller-Rabin
-\theorem
+%\theorem
 Se \textit{n}  um composto impar, então n passa no teste de Miller-Rabin no mximo para $ \frac{(n-1)}{4} $ bases menores que \textit{n}
-\subsection{Demonstração}
+\section{Demonstração}
 como n é ímpar, ento pode ser escrito como $ n = 1 + 2^{S}.t $, com $ S \>= 1 $ e t ímpar
 
-\subsubsection{caso 1}
-\subsubsection{caso 2}
-\subsubsection{caso 3}
-\subsubsection{caso 4}
+\subsection{caso 1}
+\subsection{caso 2}
+\subsection{caso 3}
+\subsection{caso 4}
 
-\section{Concluso}
+\chapter{Concluso}
 
 
 %\section{Figura}
