@@ -17,28 +17,37 @@
 %\renewcommand{\rmdefault}{arial}
 
 % Math -------------------------------------------------------------------
-%\newtheorem{theorem}{Teorema}{\bfseries}{\itshape}
-%\newtheorem{lemma}{Lema}{\bfseries}{\itshape}
-%\newtheorem{definition}{Definição}{\bfseries}{\itshape}
-%\newtheorem{corollary}{Corolário}{\bfseries}{\itshape}
-%\newtheoremstyle{example}{\topsep}{\topsep}%
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definição}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corolário}
+\newtheoremstyle{example}%
 %	{}%         Body font
-%	{}%         Indent amount (empty = no indent, \parindent = para indent)
-%	{\bfseries}% Thm head font
-%	{:}%        Punctuation after thm head
-%	{.5em}%     Space after thm head (\newline = linebreak)
-%	{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}%         Thm head spec
-%\theoremstyle{example}
-%\newtheorem{example}{Exemplo}
+	{}%         Indent amount (empty = no indent, \parindent = para indent)
+	{\bfseries}% Thm head font
+	{:}%        Punctuation after thm head
+	{.5em}%     Space after thm head (\newline = linebreak)
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}%         Thm head spec
+\theoremstyle{example}
+\newtheorem{example}{Exemplo}
+
+\newenvironment{proof}[1][Demonstração]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definição]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Exemplo]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
 
 %\sloppy
-
-\title{Teorema de Miler-Rabin\\Uma demonstração em Casos}
-
-%           #1          #2             #3           #4              #5
-%\autorPoli{firstnames}{firstinitials}{middlenames}{middleinitials}{surname}
-%\autorPoli{João Marco}{J.M.}{Maciel}{M.}{da Silva}
-\author{João Marco Maciel da Silva}
 
 
 %\orientador{<Nome do Orientador>}
@@ -84,9 +93,16 @@
 
 
 
-\address{Bacharelando em Ciências da Computação\\Instituto de Matemática e Estatística -- Universidade de São Paulo~\(USP)\\  \email{jaodsilv@linux.ime.usp.br}}
+%\address{Bacharelando em Ciências da Computação\\Instituto de Matemática e Estatística -- Universidade de São Paulo~(USP)\\  \email{jaodsilv@linux.ime.usp.br}}
 
 \begin{document} 
+
+\title{Teorema de Miler-Rabin\\Uma demonstração em Casos}
+
+%           #1          #2             #3           #4              #5
+%\autorPoli{firstnames}{firstinitials}{middlenames}{middleinitials}{surname}
+%\autorPoli{João Marco}{J.M.}{Maciel}{M.}{da Silva}
+\author{João Marco Maciel da Silva\\Bacharelando em Ciências da Computação\\Instituto de Matemática e Estatística -- Universidade de São Paulo~(USP)\\  \email{jaodsilv@linux.ime.usp.br}}}
 
 
 %% Indice
@@ -111,17 +127,18 @@ Após \cite{euclides:00}, os números primos começaram ser exaustivamente estudado
 Um dos tópicos da teoria dos números é a questo de como dizer, dado um nmero inteiro qualquer, se é primo ou composto de forma eficinte. O primeiro método  o crivo de Erastotenes, de 200A.C., muito mais adiante temos o \textit{teste determinstico de Miller}~\cite{miller1976riemann}, este, porém, utiliza a \textit{Hipótese Extendida de Riemann}, que ainda não foi provada. Poucos anos depois temos ~\cite{rabin1980probabilistic} onde ele mostra um novo teste de primalidade probabilístico baseado no ~\textit{teste de Miller}, este ficou conhecido como ~\textit{teste de Miller-Rabin}. Muitos outros fizeram trabalhos baseados nestes dois, entre \cite{bach:80}, \cite{dlp:93}, \cite{jaeschke:93}, \cite{agp:94}, \cite{zhatang:03}, \cite{schoof:04}, \cite{hurd}, \cite{macintosh:07}, \cite{jsozik:10} entre outros trabalhos interessantes.\\
 O artigo está organizado da seguinte maneira: na seção 2 encontram-se definições e teoremas(sem a respectiva demonstração) pré-requisitos para a leitura seguinte com a apresentação do \textit{teste de Miller-Rabin} e a definição de \textit{pseudo-primo forte} ao final, na seção 3 e suas respectivas subseções encontra-se uma demonstração alternativa para o \textit{Teorema de Miller-Rabin}, nas subseções desta são explorados e discutidos os casos usados para demonstrar o teorema, a seção 5 conclui o artigo.
 
-\chapter{Definies e Teoremas Anteriores}
+\chapter{Definições e Teoremas Anteriores}
 Aneis de Inteiros
 
 
 \chapter{Teorema de Miller-Rabin}
 %enunciado do teorema de miller-Rabin
 %\theorem
+\begin{theorem} 
 Se \textit{n}  um composto impar, então n passa no teste de Miller-Rabin no mximo para $ \frac{(n-1)}{4} $ bases menores que \textit{n}
+\end
 \section{Demonstração}
 como n é ímpar, ento pode ser escrito como $ n = 1 + 2^{S}.t $, com $ S \>= 1 $ e t ímpar
-
 \subsection{caso 1}
 \subsection{caso 2}
 \subsection{caso 3}

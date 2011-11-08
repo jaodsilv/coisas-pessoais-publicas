@@ -1,0 +1,641 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       V Simpósio de Iniciação Científica e Pós-Graduação do IME-USP       %%
+%%                               03-05/11/2010                               %%
+%%                        Modelo: Versão em Português                        %%
+%%                        Autor: Frank Michael Forger                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Este é um modelo para ser usado na preparação dos trabalhos submetidos ao
+%% V Simpósio de Iniciação Científica e Pós-Graduação do IME-USP, São Paulo, 
+%% a ser realizado entre 3 e 5 de novembro de 2010.
+%% 
+%% O modelo baseia-se na classe de documentos "IEEEtran" do LaTeX e no modelo
+%% "bare_conf.tex" que a acompanha, usada pelo "Institute of Electrical and
+%% Electronics Engineers" (IEEE), disponíveis em
+%% 
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% 
+%% Para informações mais detalhadas sobre a classe de documentos e o estilo
+%% BiBTeX do IEEE, veja a documentação extensa contida nos "HowTo"s que fazem
+%% parte dos arquivos zip correspondentes.
+%% 
+%% A contribuição deve estar na forma de um "resumo estendido", de
+%% aproximadamente 4-8 páginas. Solicita-se aos autores que apresentem
+%% seu material de forma didática, compreensível para um público não
+%% especializado - alunos na fase final dos seus cursos de graduação
+%% e pesquisadores trabalhando em outras áreas ou mesmo em outros
+%% departamentos.
+%% 
+%% O trabalho pode ser redigido em português ou em inglês,
+%% a critério dos autores. Se optar por inglês, por favor
+%% use o modelo "Template.tex".
+%% 
+%% O arquivo LaTeX fonte do manuscrito, junto com os arquivos anexos
+%% pertinentes (tipicamente contendo figuras, gráficos, fotos etc),
+%% se houver, deve ser submetido eletronicamente até
+%% 
+%% 
+%%                            24/09/2010 (PRAZO)
+%% 
+%% 
+%% Pede-se aos autores também encaminharem uma versão compilada, em formato pdf.
+%% 
+%% Após a realização do evento, será aceita a entrega de versões corrigidas
+%% dos trabalhos aceitos, a critério dos autores, para a confecção das atas.
+%% 
+%% Como, na confecção das atas, os trabalhos individuais serão reunidos
+%% usando um pacote do LaTeX tal como "combine", é necessário que todos
+%% os autores sigam algumas regras simples:
+%% (1) Não modifique o modelo abaixo, exceto nos locais onde isso é
+%%     solicitado explicitamente. Em particular, não inclua definições,
+%%     comandos ou parâmetros de estilo adicionais no preâmbulo.
+%%     (Você pode fazer isso durante a preparação do seu manuscrito, mas
+%%     deve remover ou substituir todos eles e verificar se o seu arquivo
+%%     ainda compila corretamente antes de submetê-lo.)
+%% (2) Use nomes para o seu arquivo principal e os arquivos anexos (se
+%%     houver) que dificilmente serão usados por outros participantes,
+%%     por exemplo, começando com (parte d)o seu nome.
+%% (3) Use o comando "\includegraphics" do pacote "graphicx" para incluir
+%%     qualquer arquivo anexo.
+%% (4) O modelo abaixo contém, além dos comentários, algum material que
+%%     serve como exemplo. Isso foi acrescentado para ajudar na preparação
+%%     da sua contribuição. Por favor, remova todo o material redundante
+%%     ou inadequado do seu documento final antes de submetê-lo.
+%% Boa sorte, e vamos começar!
+
+%%*****************************************************************************
+
+%% +----------------+      +----------------+
+%% | DOCUMENT CLASS |      | NÃO MODIFICAR! |
+%% +----------------+      +----------------+
+%%
+\documentclass[twoside, conference, compsoc, onecolumn, 12pt,a4paper]{IEEEtran}
+
+%******************************************************************************
+
+%%    +---------+          +----------------+
+%%    | PACOTES |          | NÃO MODIFICAR! |
+%%    +---------+          +----------------+
+%%
+\usepackage{IEEEtsup} % Definições complementares e modificações.
+\usepackage[latin1]{inputenc} % Disponibiliza acentos.
+%% Carregando este pacote permite escrever "Matemática" em vez de
+%% "Matem\'atica", "Estatística" em vez de "Estat\'{\i}stica", "ç"
+%% em vez de "\c{c}", São Paulo" em vez de "S\~ao Paulo", etc.,
+%% deixando o arquivo fonte mais legível.
+\usepackage[english,brazil]{babel}
+%% Disponibiliza Inglês e Português Brasileiro.
+\usepackage{latexsym,amsfonts,amssymb} % Disponibiliza fontes adicionais.
+\usepackage{theorem} % Disponibiliza uma extensão do ambiente "Theorem".
+\usepackage[cmex10]{amsmath} % Pacote matemático básico da AMS
+\usepackage{url} % Melhora quebras de linha em endereços da Internet.
+%% Desative o pacote "url" se ativar o pacote "hyperref" abaixo,
+%% pois neste caso ele se torna supérfluo quando compilar em modo pdf,
+%% enquanto quando ambos entram em conflito quando compilar em modo dvi.
+\ifCLASSINFOpdf
+ \usepackage[pdftex]{graphicx}
+  \DeclareGraphicsExtensions{.pdf,.png,.jpeg}
+\else
+ \usepackage[dvipdfm]{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+\fi
+%% Pacote "Graphicx" para incorporar arquivos gráficos externos.
+%% Veja os comentários na seção "Figuras" abaixo.
+
+%******************************************************************************
+
+%%   +-----------+
+%%   |  PACOTES  |
+%%   | OPCIONAIS |
+%%   +-----------+
+%%
+%% CARREGUE PACOTES ADICIONAIS DESCOMENTANDO O QUE PRECISAR (OPCIONAL):
+
+%\usepackage{psfrag} % Permite superimpor rótulos em arquivos importados.
+\usepackage[tight,footnotesize]{subfigure} % Allows subfigures in figures.
+\usepackage[noadjust]{cite} % Disponibiliza melhorias em citações.
+\usepackage[all]{xy} % Pacote Xypic para desenhar diagramas.
+%\usepackage{hyperref} % Package for adding internet links to references.
+%% Desative o pacote "url" acima se ativar o pacote "hyperref",
+%% pois neste caso ele se torna supérfluo quando compilar em modo pdf,
+%% enquanto quando ambos entram em conflito quando compilar em modo dvi.
+ 
+%% Para outras opções de pacotes, veja o arquivo bare_conf.tex. Mas avisamos
+%% que alguns deles podem ser incompatíveis com a classe "combine" (como
+%% acontece, por exemplo, no caso do pacote "cite"), o que é o motivo
+%% de pedirmos não carregar pacotes adicionais exceto quando estritamente
+%% necessário.
+
+%%  +--------------+
+%%  | TEOREMAS ETC |
+%%  +--------------+
+%%
+\theoremstyle{plain}
+\theorembodyfont{\itshape}
+\newtheorem{thm}{Teorema}
+\newtheorem{lem}{Lema}
+\newtheorem{prp}{Proposição}
+\newtheorem{cor}{Corolário}
+\newtheorem{dfn}{Definição}
+\theorembodyfont{\upshape}
+\newtheorem{exm}{Exemplo}
+\newtheorem{rmk}{Observação}
+\renewcommand{\IEEEQED}{\IEEEQEDopen}
+
+
+%%    +-----------+
+%%    | HIFENAÇÃO |
+%%    +-----------+
+%%
+%% CORRIGA HIFENAÇÕES INADEQUADAS RECORRENTES NO SEU TEXTO (OPCIONAL):
+\hyphenation{}
+
+%%*****************************************************************************
+
+\begin{document}
+
+%%*****************************************************************************
+
+%% Se você ativou o pacote "url" ou "hyperref":
+\urlstyle{tt}
+%% Coloca urls na fonte "typewriter".
+
+
+%%    +--------+           +----------------+
+%%    | TÍTULO |           | FAVOR INSERIR! |
+%%    +--------+           +----------------+
+%%
+\title{Teorema de Miler-Rabin\\Uma demonstração em Casos}
+%% Veja os comentários na seção "Título e autores" abaixo.
+
+
+%%    +---------+          +----------------+
+%%    | AUTORES |          | FAVOR INSERIR! |
+%%    +---------+          +----------------+
+%%
+\author{%
+ \IEEEauthorblockN{João Marco Maciel da Silva \,\IEEEauthorrefmark{1}}
+ \IEEEauthorblockA{\IEEEauthorrefmark{1}%
+                   Departamento de Ciência da Computação,
+                   Instituto de Matemática e Estatística, \\
+                   Universidade de São Paulo, São Paulo, Brasil,
+                   CEP: 05508-090 \\
+                   E-mail: jaodsilv@linux.ime.usp.br}
+}
+%% Veja os comentários na seção "Título e autores" abaixo.
+
+%%*****************************************************************************
+
+\maketitle
+
+%%*****************************************************************************
+
+%%    +----------+         +----------------+
+%%    |  RESUMO  |         | FAVOR INSERIR! |
+%%    +----------+         +----------------+
+%%
+
+\selectlanguage{brazil}
+\renewcommand{\IEEEkeywordsname}{Palavras chave}
+\begin{abstract}
+O Teorema de Miller-Rabin demonstrado pode ser dividido em subcasos a serem estudados visando diminuir a probabilidade de ser um pseudo-primo forte. Testes de primalidade determinísticos e probabilísticos têm muitas aplicações. [citacao] , o objetivo aqui é verificar que apenas pequenos casos .
+\end{abstract}
+
+%% +----------------+      +----------------+
+%% | PALAVRAS CHAVE |      | FAVOR INSERIR! |
+%% +----------------+      +----------------+
+\begin{IEEEkeywords}
+Teorema de Miller-Rabin. Teste de Miller-Rabin. Teste de Miller. Segurança. teste de primalidade. chave pública.
+\end{IEEEkeywords}
+
+\selectlanguage{english}
+
+\begin{abstract}
+\end{abstract}
+\renewcommand{\IEEEkeywordsname}{Index words}
+\begin{IEEEkeywords}
+\end{IEEEkeywords}
+
+\selectlanguage{brazil}
+
+
+
+%%*****************************************************************************
+
+%%      +-------+          +----------------+
+%%      | TEXTO |          | FAVOR INSERIR! |
+%%      +-------+          +----------------+
+
+
+\section{Introdução}
+
+Antes de \cite{euclides:00}, os gregos de escolas anteriores, como a de Pitágoras, estavam interessados pelo estudo dos números primos pelas suas propriedades Numerológicas e Místicas.\\
+Ainda antes de Euclides alguns teoremas sobre primos já haviam sido provadas, porém sem a formalidade que viria depois. \\
+Após \cite{euclides:00}, os números primos começaram ser exaustivamente estudados, ele trás pela primeira vez um pouco de formalidade e também dois importantes resultados, o \textit{Teorema Fundamental da Aritmética} e que existem infinitos números primos. Com isso pode-se considerar o nascimento do estudo da Teoria dos Números.\\
+Um dos tópicos da teoria dos números é a questo de como dizer, dado um nmero inteiro qualquer, se é primo ou composto de forma eficinte. O primeiro método  o crivo de Erastotenes, de 200A.C., muito mais adiante temos o \textit{teste determinstico de Miller}~\cite{miller1976riemann}, este, porém, utiliza a \textit{Hipótese Extendida de Riemann}, que ainda não foi provada. Poucos anos depois temos ~\cite{rabin1980probabilistic} onde ele mostra um novo teste de primalidade probabilístico baseado no ~\textit{teste de Miller}, este ficou conhecido como ~\textit{teste de Miller-Rabin}. Muitos outros fizeram trabalhos baseados nestes dois, entre \cite{bach:80}, \cite{dlp:93}, \cite{jaeschke:93}, \cite{agp:94}, \cite{zhatang:03}, \cite{schoof:04}, \cite{hurd}, \cite{macintosh:07}, \cite{jsozik:10} entre outros trabalhos interessantes.\\
+O artigo está organizado da seguinte maneira: na seção 2 encontram-se definições e teoremas(sem a respectiva demonstração) pré-requisitos para a leitura seguinte com a apresentação do \textit{teste de Miller-Rabin} e a definição de \textit{pseudo-primo forte} ao final, na seção 3 e suas respectivas subseções encontra-se uma demonstração alternativa para o \textit{Teorema de Miller-Rabin}, nas subseções desta são explorados e discutidos os casos usados para demonstrar o teorema, a seção 5 conclui o artigo.
+
+\section{Definições, teoremas e lemas anteriores}
+
+esta seção dedica-se a apresentar as definições, teoremas e lemas necessários para o entendimento da seção seguinte, será presumido apenas conhecimentos básicos de matemática.
+
+%%def pseudoprimo forte
+%% teste de miller-rabin
+
+\section{Teorema de Miller-Rabin}
+Primeiramente, vamos enunciar o Teorema:
+\begin{thm}[Teorema de Miller-Rabin]~ \label{thm:MRabin}
+    Seja n um inteiro composto ímpar, então n passa no teste de miller-rabin no máximo para $\frac{n-1}{4}$ bases $b\in\mathbb{Z}_{n}$, isto é, se n é inteiro composto ímpar então ele é um pseudo-primo forte para no máximo $\frac{n-1}{4}$ bases naturais menores que $\vert{n}\vert$
+
+% Seja $f:D^{n}\rightarrow D^{n}$ uma função contínua, onde $D^{n}$ é o $n$-disco centrado na  origem e de raio 1 $(\textrm{isto é, }D^n=\{x\in\mathbb{R}^n : \left\|x\right\|\leq 1\})$.  Então, $f$ tem um ponto fixo, isto é 
+% \begin{displaymath}
+% \exists x \in D^{n} \textrm{ tal que } f(x)=x
+% \end{displaymath}
+\end{thm}
+
+para pequenos casos é fácil testar computacionalmente, muitas implementações do teste podem ser encontradas na internet, como em %%%%%%%%%%%%%%%%%% incluir citação de página web.
+
+Da mesma forma, %% citação do rabin %%
+mostra números que chegam muito perto deste valor, o que não mostra ser a melhor probabilidade, mas muito perto disto, talvez perto o suficiente para que não possa ser melhorado.
+A seguir temos não apenas uma demonstração mas também um estudo sobre cada um dos casos e em que casos este valor chega muito perto do valor $\frac{n-1}{4}$
+%Para $n=0$, a prova é trivial, visto que $D^{0}$ é um conjunto unitário e, portanto, $f(x)=x$ para todo $x\in D^{0}$ e toda função $f:D^{0}\rightarrow D^{0}$ (pois só existem um único tal $x$ e uma única tal $f$). Para o caso $n=1$, a demonstração desse resultado é muito simples, e pode ser feita sem a introdução de nenhum conceito mais avançado.
+\begin{IEEEproof}
+%Vamos mostrar que se $f:D^{1}\rightarrow D^{1}$ é contínua, então $f$ tem um ponto fixo.
+
+%Notemos que $D^{1}=[-1,1]$, um intervalo fechado.  Se $f(-1)=-1$ ou $f(1)=1$, o teorema já está provado. Caso contrário, suponha que $f(x)\neq x$ para todo $x$ em $D^{1}$. Considere $G=\{(x,f(x)):x\in D^{1}\}$ o gráfico de $f$. Como por hipótese $f$ é contínua, temos que $G$ é conexo. Observe agora os conjuntos $A=\{(x,f(x)): f(x)>x\}$ e $B=\{(x,f(x)): f(x)<x\}$. Como estamos trabalhando com o caso em que $f(-1)>1$ e $f(1)<1$, temos que $A$ e $B$ não são vazios. Além disso, como supomos que $\forall x\in D^{1}, f(x)\neq x$, temos que $A\cup B= G$, o que é um absurdo, pois $G$ é conexa. Portanto, existe um $x$ tal que $f(x)=x$.
+
+
+
+
+\end{IEEEproof}
+%A ideia por trás desta prova é que podemos desenhar o gráfico de $f$ dentro do quadrado $[0,1]\times[0,1]$. O gráfico da função identidade é a diagonal $d$ desse quadrado; como $f$ é contínua, para ir de um lado ao outro do quadrado, seu gráfico precisa passar por $d$, e é nesse ``cruzamento'' que se encontra o ponto fixo. 
+
+
+%\section{Homologia Singular}
+%Para podermos generalizar a prova do teorema para uma dimensão natural $n$ qualquer, precisamos construir o conceito de Homologia Singular. 
+
+%A homologia singular associa a cada espa\c co topol\'ogico uma sequ\^encia de grupos abelianos
+%$\{H_n(X)\}_{n\in\mathbb{Z}_{\geq 0}}$ e a cada aplica\c c\~ao cont\'\i
+%nua $f:X\to Y$, entre dois dados espa\c cos topol\'ogicos, uma
+%sequ\^encia de homomorfismos induzidos $$S_n(f): H_n(X)\to
+%H_n(Y),\ n\in\mathbb{Z}_{\geq 0}.$$
+
+%Como iremos construir os grupos $H_n$ como grupos abelianos livres, vamos definir primeiro um grupo abeliano livre com uma certa base.
+%\begin{dfn}
+%Seja $G$ um grupo abeliano. $G$ \'e chamado um \emph{grupo
+%abeliano livre com base $B$} se $B\subset G$ e existir
+%$\{F_{\lambda}\}_{\lambda\in\Lambda}$ tal que $G\simeq
+%\oplus_{\lambda\in \Lambda}F_{\lambda}$, onde
+%$F_{\lambda}\simeq\mathbb{Z}$ para todo $\lambda\in\Lambda$. 
+%\end{dfn}
+
+%Podemos interpretar $G$ como o conjunto de todas as somas formais dos elementos de $B$ e seus respectivos opostos.
+%Definiremos agora um $n$-simplexo padrão $\Delta^{n}$.
+
+%\begin{dfn} Seja $n\geq 0$. Chamaremos
+%\begin{displaymath}
+%\Delta^{n}=\left\{(x_0,\ldots,x_i,\ldots, x_n)\in\mathbb{R}^{n+1}\,:\,
+%\sum_{i=0}^n x_{i}=1,\ x_{i}\geq 0\right\}
+%\end{displaymath}
+%\end{dfn}
+
+%\medskip
+
+%Consideremos $X$ um espa\c co topológico.
+
+%\begin{dfn} Qualquer aplica\c c\~ao continua
+%$\sigma:\Delta^n\,\to\, X$ \'e chamado simplexo singular
+%$n$-dimensional.
+%\end{dfn}
+
+%Para qualquer $0\leq i\leq n$ definimos
+%$\varepsilon_n^i:\Delta^{n-1}\,\to\, \Delta^n$ dado por
+
+%$$
+%\varepsilon^i_n(x_0,\dots, x_{n-1}) \! = \! \left\{ \!\! \begin{array}{l}
+%(0,x_0,\dots,x_{n-1}), \  i=0;\\
+%(x_0,\dots, x_{i-1},0,x_{i+1},\dots, x_{n-1}),i\neq 0.
+%\end{array} \right.
+%$$ 
+%A Aplica\c c\~ao $\varepsilon_n^i$ \'e chamada {\it $i$-\'esimo
+%operador face de $\Delta^n$}. Interpretamos esse operador a partir do fato de que uma face de um $n$-simplexo é um $n-1$-simplexo. Assim, $\sigma\circ\varepsilon^i_n$ é uma das faces de $\sigma$.
+
+
+%\begin{dfn} Seja $n>0$. Definimos o $n$-\'esimo operador bordo $\partial_n$ como o homomorfismo dado por
+%$$
+%\partial_n(\sigma)=\sum_{\gamma=0}^n (-1)^{\gamma}\sigma\circ
+%\varepsilon_n^{\gamma}
+%$$
+%para todo $n$-simplexo singular $\sigma:\ \Delta^n\to X$. Definimos também $\partial_0(\sigma)=0$.
+%\end{dfn}
+
+%Este operador recebe este nome justamente pois $\partial_{n}(\sigma)$ descreve o bordo topológico do conjunto $\sigma(\Delta^{n})$. Note que, assim como em álgebra linear, basta definir o homomorfismo sobre um conjunto de geradores, pois podemos estendê-lo a um elemento qualquer por linearidade. Os sinais do cálculo de $\partial_{n}$ indicam uma orientação do espaço.
+
+%\begin{prp}[Propriedades do operador bordo] \label{prp:bordo}:
+
+%\begin{enumerate} \item Seja $n\geq 1$ e $0\leq k<j\leq
+%n+1$, ent\~ao
+%$$
+%\varepsilon_{n+1}^j\circ \varepsilon_n^k=\varepsilon_{n+1}^k\circ
+%\varepsilon_{n}^{j-1}\,:\, \Delta^{n-1}\to \Delta^{n+1}
+%$$
+%\item Seja $n>3$ e $X$ um espa\c co topol\'ogico, ent\~ao
+%$$
+%\partial_{n+1}\circ \partial_n=0
+%$$
+%\end{enumerate}
+%\end{prp}
+
+%Definimos para $n\geq 0$ o $n$-\'esimo grupo singular de $X$,
+%$S_n(X)$ como sendo o grupo abeliano livre cuja base s\~ao todos
+%$n$-simplexos singulares de $X$. Em particular, os elementos de
+%$S_{n}(X)$ s\~ao a soma finita $\sum_{\sigma} m_{\sigma}\cdot \sigma$,
+%onde $\sigma: \Delta^n\,\to\, X$ e $m_{\sigma}\in\mathbb{Z}$. 
+
+%Portanto $(S.(X),\partial .)$ define um complexo de cadeias que
+%chamaremos de complexo de cadeias singulares associado ao espa\c
+%co topol\'ogico $X$:
+%$$
+%\ldots \rightarrow S_{n+1}\stackrel{\partial_n}{\rightarrow}
+%S_{n}\stackrel{\partial_{n-1}}{\rightarrow} S_{n-1}\rightarrow \dots\stackrel{\partial_{1}}{\rightarrow}S_{0}\stackrel{\partial_{0}}{\rightarrow}0
+%$$
+
+%Definimos, dados dois espaços topológicos $X,Y$ e uma função contínua $f:X\rightarrow Y$, o homomorfismo induzido $f_{\#}:S_{n}(X)\rightarrow S_{n}(Y)$.
+%Dado $\sigma$ um gerador de $S_{n}(X)$, definimos $f_{\#}(\sigma)=f\circ\sigma$. 
+%Então, estendemos $f_{\#}$ por linearidade.
+
+%Definimos também dois subgrupos de $S_n(X)$: o subgrupo dos $n$-ciclos
+%singulares de $X$, $Z_n(X)=Ker\,\partial_n$ e o subgrupo de
+%$n$-bordos singulares de $X$, $B_n(X)=Im\,\partial_{n+1}$. 
+%Pela proposição \ref{prp:bordo}, temos que $ B_n < Z_n $. Como $S_n$ é, por definição, um grupo abeliano, temos que todos os seus subgrupos são normais.
+
+%Podemos então, finalmente, definir:
+%\begin{dfn}
+%O $n$-\'esimo grupo de Homologia do espaço topológico $X$ é o grupo quociente:
+%\begin{displaymath}
+%H_n(X)=Z_n(X)/B_n(X)
+%\end{displaymath}
+%\end{dfn}
+
+%Desta maneira, $H_{n}$ associa a cada espaço topológico um grupo abeliano. Da mesma maneira, faremos com que $H_{n}$ associe a cada função contínua entre espaços topológico um homomorfismo entre grupos abelianos.
+
+%\begin{dfn}
+%Sejam $X,Y$ espaços topológicos. Seja $f: X\rightarrow Y$ uma função contínua. Definimos o homomorfismo
+%$$
+%H_{n}(f):H_{n}(X)\longrightarrow H_{n}(Y)
+%$$
+%$$
+%z_{n}+B_{n}(X)\longmapsto f_{\#}(z_{n}) + B_{n}(Y)
+%$$
+%\end{dfn}
+
+%Com esta definição, podemos provar que $H_{n}$ é um funtor da categoria dos espaços topológicos na categoria dos grupos abelianos. Para a definição de categoria, funtor e mais detalhes, consulte ~\cite{category}.
+
+%Além disso, temos:
+%\begin{prp} \label{prp:composicao}
+%Sejam $f:X\rightarrow X'$ e $f':X\rightarrow X''$ funções contínuas entre espaços topológicos. Então:
+%$$
+%H_n(f'\circ f)=H_n(f')\circ H_n(f) 
+%$$
+%\end{prp}
+%\begin{IEEEproof}
+%Seja $z_n\in Z_n(X)$. Então:
+
+%$$
+%H_n(f')\circ H_n(f)(z_n+B_n(X))=H_n(f')(f_{\#}(z_n)+B_n(Y))=
+%$$
+%$$
+%=f'_{\#}(f_{\#}(z_n))+B_n(X)=H_n(f'\circ f)(z_n+B_n(X))
+%$$
+%\end{IEEEproof}
+%\section{Homeomorfismos e homotopias}
+
+%Uma das principais vantagens dos grupos de homologia que definimos (além de um dos seus principais usos) é o fato de que os grupos homólogicos $H_n$ são preservados por homeomorfismos. Em outras palavras, por mais que se ``deforme'' um espaço topológico, seus grupos de homologia serão sempre os mesmos (serão sempre isomorfos).
+
+%Ao invés de trabalhar com esse fato, usaremos um outro muito mais forte, e que será mais útil para nós. O fato de não apenas espaços isomorfos, mas também espaços de mesmo tipo de homotopia, terem os mesmos grupos homológicos.
+
+%Primeiramente, vamos definir funções homotópicas:
+
+%\begin{dfn}
+%Sejam $X,Y$ espaços topológicos e $f,g:X\rightarrow Y$ funções contínuas. Dizemos que $f$ é \emph{homotópica} a $g$ ( e denotamos $f\simeq g$) se  existe uma função contínua $F: X \times I \rightarrow Y$ (chamada homotopia) tal que: 
+%$$
+%F(x,0)= f(x) \quad\textrm{e}\quad F(x,1)= g(x)\quad\forall x \in X 
+%$$
+%\end{dfn}
+
+%Em outras palavras, $f$ é homotópica a $g$ se é possível deformar $f$ contínuamente até obter $g$. Podemos mostrar que as homotopias definem uma relação de equivalência.
+%A partir desse conceito, usando analogias, vamos construir uma generalização do conceito de homeomorfismo: os tipos de homotopia.
+
+%Suponha que tenhamos $X,Y$ espaços topológicos homeomorfos. Podemos imaginar que $X$ e $Y$ são conjuntos equipotentes que são ``iguais'' a menos de deformações. Pela definição de homemorfismo, existem $f:X\rightarrow Y$ e $g:Y \rightarrow X$ funções contínuas tais que $f\circ g= g\circ f= \textrm{Id}$ (por isso dizemos que $g=f^{-1}$). Essa definção exclui, contudo, conjuntos que compartilham propriedades topológicas, mas não são equipotentes. 
+
+%Por exemplo, considere um ponto $\{x_{0}\}$ e um segmento de reta $R$. Pode-se deformar o segmento a um ponto, mas eles não são homeomorfos, pois o ponto é um conjunto unitário, e o segmento de reta tem cardinalidade infinita (por acaso, a mesma cardinalidade de $\mathbb{R}$). Logo, não existe nenhuma bijeção entre eles, quanto mais um homeomorfismo. Mas, como veremos, o ponto e o segmento de reta tem o mesmo tipo de homotopia.
+
+%\begin{dfn}
+%Sejam $X,Y$ espaços topológicos. Dizemos que $X$ e $Y$ tem o mesmo \emph{tipo de homotopia} se existem funções contínuas 
+%$f:X\rightarrow Y $ e $g:Y\rightarrow X$ tais que $g\circ f\simeq \textrm{Id}_{X}$ e $f\circ g\simeq \textrm(Id)_{Y}$
+%\end{dfn}
+
+%É fácil ver que se dois espaços são homeomorfos eles tem o mesmo tipo de homotopia. No exemplo do ponto e do segmento, podemos usar as funções triviais de um no outro (a função $f$ que leva qualquer ponto de $R$ em $x_0$ e a função $g$ que leva $x_0$ a um ponto $x_1\in R$), e com isso $R$ e $\{x_{0}\}$ tem o mesmo tipo de homotopia.
+
+%Agora, vamos introduzir uma ferramenta que ajuda muito no cálculo de homologias e ajuda a formalizar resultados intuitivos.
+
+%\begin{thm}[Axioma da Dimensão]
+%Sejam $f,g:X\rightarrow Y$ duas funções entre espaços topológicos. Se $f\simeq g$, então:
+%$$
+%H_n(f)=H_n(g)
+%$$
+%\end{thm}
+%Esse teorema mostra a semelhança entre homologia e homotopia. Os homomorfismos induzidos por uma função contínua não variam quando se deforma essa função.
+
+%\begin{cor}\label{cor:homotopia}
+%Sejam $X,Y$ espaços topológicos de mesmo tipo homotópico. Então, para todo $n\in\mathbb{N}$, os grupos $H_n(X)$ e $H_n(Y)$ são isomorfos.
+%\end{cor}
+
+%\begin{IEEEproof}
+%Seja $f:X\rightarrow Y$ uma função como na definição de tipos de homotopia. Vamos mostrar que $H_n(f)$ é um isomorfismo entre $H_n(X)$ e $H_n{Y}$. Para isto, vamos mostrar que $H_n(g)$ é o inverso de $H_n(f)$, onde $g:Y\rightarrow X$ é a função tal que $g\circ f\simeq \textrm{Id}_{X}$. De fato, pela proposição \ref{prp:composicao}, temos:
+%$$
+%H_n(g)\circ H_n(f)= H_n(g\circ f)= H_n(\textrm{Id}_X)=\textrm{Id}_{H_n(X)}
+%$$
+%e
+%$$
+%H_n(f)\circ H_n(g)= H_n(f\circ g)= H_n(\textrm{Id}_Y)=\textrm{Id}_{H_n(Y)}
+%$$
+%logo, $H_n(g)$ é o inverso de $H_n(f)$, como queríamos.
+%\end{IEEEproof}
+
+%Com essas ferramentas, fica muito mais fácil calcular grupos de homologia. Ao invés de calcular homologias de espaços complicados, podemos estudar a homologia de espaços mais simples que sejam homólogos ou tenham o mesmo tipo de homotopia que os espaços que inicialmente queríamos calcular.
+
+%\section{Cálculo da Homologia do $n$-disco e $n$-esfera}
+%Agora que definimos Homologia Singular, usaremos essa ferramenta para generalizar o teorema do ponto fixo para qualquer dimensão natural $n>1$.  Para tanto, vamos calcular $H_{n-1}(D^{n})$ e $H_{n-1}(S^{n-1})$, sendo que $S^{n-1}$ é a $(n-1)$-esfera unitária centrada na origem $(\textrm{isto é, }S^{n-1}=\{x\in\mathbb{R}^{n-1} : \left\|x\right\|=1\})$. Note que ($S^{n-1}$ é o bordo de $D^{n}$).
+
+%Mas antes, para começar, vamos calcular a homologia de um conjunto muito mais trivial: o ponto.
+
+%\begin{prp} \label{prp:ponto}
+%Seja $n\geq 1$, e seja $X=\{x_0\}$ um espaço topológico unitário (ponto). Então:
+%$$
+%H_n(X)=0
+%$$
+%\end{prp}
+%\begin{IEEEproof}
+%Como $X$ é um ponto, $S_n$ é gerado por um único gerador: a função $\sigma_n$ que leva todo o $n$-simplexo $\Delta^n$ em $x_0$. Logo, $S_n=\mathbb{Z}$. Calculando o operador bordo em $\sigma_n$, temos: 
+%$$
+%\partial_n(\sigma_n)=\sum^{\gamma\textrm{ é par}}_{0\leq\gamma\leq n}\sigma_{n-1}-\sum^{\gamma\textrm{ é impar}}_{0\leq\gamma\leq n}\sigma_{n-1}
+%$$
+%onde $\sigma_{n-1}$ é o único gerador de $S_{n-1}$. Vamos agora dividir em dois casos:
+%\begin{enumerate}
+%\item Suponha $n$ par. Então $\partial_n(\sigma_n)=\sigma_{n-1}$ e $\partial_{n+1}(\sigma_{n+1})=0$. Logo $Z_n(X)=B_n(X)=0$, e portanto $H_n(X)=0$, como queríamos.
+%\item Suponha $n$ ímpar. Então $\partial_{n}(\sigma_{n})=0$ e $\partial_{n+1}(\sigma_{n+1})=\sigma_{n}$. Logo $Z_n(X)=B_n(X)=S_n(X)$, e portanto $H_n(X)=0$, como queríamos.
+%\end{enumerate}
+%\end{IEEEproof}
+
+%Com isso e os teoremas de homotopia, fica fácil calcular a homologia do disco:
+%\begin{lem} \label{lem:homologa do disco}
+%Seja $n\geq 1$. Então 
+%\begin{displaymath}
+%H_{n-1}(D^{n})=0
+%\end{displaymath}
+%\end{lem}
+%\begin{IEEEproof}
+%Vamos mostrar que $D_n$ tem o mesmo tipo de homotopia que um ponto $X={x_0}$. Considere $f$ a função que leva qualquer ponto do disco em $x_0$, e $g$ a função que leva $x_0$ no centro do disco. Como $f\circ g=\textrm{Id}_X$ , então $f\circ g\simeq\textrm{Id}_X$. Da mesma maneira, temos que $g\circ f\simeq\textrm{Id}_{D^n}$, pois existe a homotopia:
+%$$
+%F(x,t)= tx
+%$$
+%De fato, se $t=0$, $F(x,t)=0=(g\circ f)(x)$. Se $t=1$, $F(x,t)=x={Id}_{D^n}(x)$. Como $F$ é polinomial, temos que $F$ é contínua. Assim, $D^{n}$ tem o mesmo tipo de homotopia que o ponto. Logo, pelo corolário \ref{cor:homotopia} e pela proposição \ref{prp:ponto}, temos:
+%$$
+%H_{n-1}(D^{n})=H_{n-1}(X)=0
+%$$
+%\end{IEEEproof}
+
+%Antes de continuarmos, precisamos de mais algumas definições.
+
+%Considere ${G_{0},\ldots, G_{n}}$ uma sequência de grupos abelianos associada a uma sequência ${\phi_{1},\ldots,\phi_{n}}$ de 
+%homomorfismos. Representamos esta sequência da seguinte maneira:
+%$$
+%G_{0}\stackrel{\phi_{1}}{\rightarrow}G_{1}\stackrel{\phi_{2}}{\rightarrow}\ldots \stackrel{\phi_{n}}{\rightarrow} G_{n}
+%$$
+%Dizemos que uma sequência como essa é \emph{exata} se para $i=1,\ldots,n-1$ temos $\textrm{im}\:\phi_{i}=\ker\:\phi_{i+1}$. 
+%Note que esta condição é um pouco mais forte do que o item 2 da proposição \ref{prp:bordo} 
+%($\partial_{n+1}\circ\partial_{n}=0$).
+
+%Também vamos precisar do teorema de Mayer-Vietoris. Quando é possível dividir o espaço topológico $X$ em dois subespaços $X_{1},X_{2}$ tais que $X$ seja a união de seus interiores (i.e., $X=X_{1}^{\circ} \cup X_{2}^{\circ}$), esse teorema constrói uma sequência exata relacionando esses subespaços (para mais detalhes, consultar ~\cite{Rotman}).
+
+%\begin{thm}[Mayer-Vietoris] \label{thm:Mayer-Vietoris}
+%Se $X_{1},X_{2}$ são subespaços de $X$ tais que $X=X_{1}^{\circ} \cup X_{2}^{\circ}$, então existe a sequência exata:
+%$$
+%\begin{array}{l}
+%\ldots\rightarrow H_{n}(X_1\cap X_2)\rightarrow H_{n}(X_1)\oplus H_n(X_2)\rightarrow H_n(X) \rightarrow \\
+%\rightarrow H_{n-1}(X_1\cap X_2)\rightarrow\ldots
+%\end{array}
+%$$
+%\end{thm}
+
+%%Outro teorema do qual vamos precisar:
+%%\begin{thm}\label{thm:conexidade}
+%%Se $X$ é um espaço topológcio conexo por caminhos, então $H_0(X)=\mathbb{Z}$.
+%%\end{thm}
+
+%Agora, vamos calcular $H_{n-1}(S^{n-1})$: 
+%\begin{lem} \label{lem:homologa da esfera}
+%Seja $n>1$. Então 
+%\begin{displaymath}
+%H_{n-1}(S^{n-1})=\mathbb{Z}
+%\end{displaymath}
+%\end{lem} 
+
+%\begin{IEEEproof}
+%Vamos utilizar a indução. Considere $n=2$. Considere $\pi_1(S^1)$ o grupo fundamental da esfera $S^1$. Pode-se mostrar que $\pi_1(S^1)=\mathbb{Z}$ construindo um isomorfismo entre o grupo fundamental e $\mathbb{Z}$ que computa o número de voltas dadas pelas curvas em $S^1$.
+
+%Segundo o teorema 7.1 de ~\cite{Massey}, temos que o grupo homológico $H_1(S^1)$ é isomorfo ao quociente de $\pi_1(S^1)$ pelo seu subgrupo comutador. Como $\mathbb{Z}$ é abeliano, temos que $H_1(S^1)=\pi_1(S^1)=\mathbb{Z}$.
+
+%%Podemos mostrar que $H_1(S^1)=\mathbb{Z}$ de maneira análoga à pela qual mostramos que o grupo fundamental da $1$-esfera ($\pi_1 (S^1)$) é isomorfo a $\mathbb{Z}$, associando um $1$-simplexo singular em $S^1$ ao `número de voltas' que ele completa na esfera.
+%%Vamos mostrar que $H_1(S^1)=\mathbb{Z}$.
+
+%%Imagine $S^1$ como uma circunferência em um plano. Um $1$-simplexo singular $\sigma$ em $S^1$ define um arco $\widehat{abc}$.
+%%Dessa forma, temos que $\partial_1(\sigma)=c-a$. 
+
+%%Portanto, $z_n$ está no kernel de $\partial_1$ se e somente se as parcelas de $z_n$ definem arcos fechados, ou seja, um arco do tipo $\widehat{aba}$.
+
+%%Agora, vamos interpretar o $S_2(S^1)$. Um $2$-simplexo é um triângulo. 
+
+%Agora, suponha o lema válido para $n=k\geq2$. Considere agora $n=k+1$. Sejam $a$ e $b$ os pólo norte e sul de $S^{k}$, respectivamente.  Chamemos $X_1:=S^k-(a)$ e $X_2:=S^k-(b)$. Como ${a}$ e ${b}$ são fechados (pois a topologia de $S^k$ é induzida de $R^{k+1}$, a qual é sabidamente $T_1$), $X_1$ e $X_2$ são abertos. Além disso, $X_1{\circ}\cup X_2^{\circ}=X_1\cup X_2= S^k$.
+
+%Pelo teorema de Mayer-Vietoris (\ref{thm:Mayer-Vietoris}), existe uma sequência exata
+%$$
+%\begin{array}{l}
+%H_k(X_1)\oplus H_k(X_2)\rightarrow H_k(S^k) \rightarrow H_{k-1}(X_1\cap X_2)\rightarrow \\
+%\rightarrow H_{k-1}(X_1)\oplus H_{k-1}(X_2)
+%\end{array}
+%$$
+
+%Dado um $i\in\mathbb{N}$ qualquer, podemos dizer que $S^i\subset S^{i+1}$. Dizemos que \emph{$S^i$ é o equador de $S^{i+1}$}(imagine $S^2$ como um globo terrestre, onde $S^1$ corresponde à linha do equador). Voltando à prova, pode-se mostrar que $X_1\cap X_2$ tem o mesmo tipo de homotopia que o equador de $S^k$.  Pense em $X_1\cap X_2$ como uma esfera com dois buracos; pode-se alargar esses buracos e amassar o que restou da esfera até que sobre apenas uma argola: o equador da esfera. Portanto, pelo corolário \ref{cor:homotopia} e pela hipótese de indução, $H_k(X_1^{\circ}\cap X_2^{\circ})=H_k(S^{-1})=\mathbb{Z}$. 
+
+%Da mesma forma, podemos mostrar que $X_1$ e $X_2$ tem o mesmo tipo de homotopia que um ponto. Novamente, pensando em $X_1$ e $X_2$ como esferas com 1 buraco, pode-se alargar esse buraco até que só sobre um ponto. Podemos então concluir, da mesma maneira que fizemos com a esfera, que $H_k(X_1)=H_k(X_2)=H_{k-1}(X_1)=H_{k-1}(X_2)=0$. Portanto, $H_k(X_1)\oplus H_k(X_2)=H_{k-1}(X_1)\oplus H_{k-1}(X_2)=0$.
+
+%A partir dessas duas informações, podemos reescrever a sequência anterior como 
+%$$
+%0 \stackrel{i}{\rightarrow} H_k(S^k) \stackrel{e}{\rightarrow} \mathbb{Z}\stackrel{p}{\rightarrow} 0
+%$$
+
+%Como essa sequência é exata, temos que o homomorfismo $e$ é injetor, pois $\ker e=\textrm{Im } i= 0$. Além disso, $e$ é sobrejetor, pois $\textrm{Im }e= \ker p= \mathbb{Z}$. Portanto, $e$ é um isomorfismo. Assim, $H_k{S^k}=\mathbb{Z}$, como queríamos.
+
+%Pelo Princípio da Indução Finita, podemos concluir que, de fato, $H_{n-1}(S^{n-1})=\mathbb{Z}$ para todo $n>1$.
+%\end{IEEEproof}
+
+%\section{A Generalização}
+%Agora com todas as ferramentas em mãos, vamos finalmente provar o teorema do ponto fixo de Brouwer para $n>1$. A ideia desta prova consiste em supor por absurdo que o resultado não vale, e com isso criar uma retração de $D^{n}$ em $S^{n}$. Então, quando calculamos o homomorfismo induzido por essa retração, chegaremos a uma incompatibilidade algébrica. (Adaptado de 
+%~\cite{Rotman})
+
+%\begin{IEEEproof}
+%Seja $f:D^{n}\rightarrow D^{n}$ uma função contínua, com $n>1$. Suponhamos, por absurdo, que $f$ não tem nenhum ponto fixo, ou seja:
+%\begin{displaymath}
+%\forall x \in D^{n}, f(x)\neq x
+%\end{displaymath}
+
+%A partir disso, construiremos uma contração $g$ de $D^{n}$ em $S^{n-1}$, isto é, uma função $g:D^{n}\rightarrow S^{n-1}$ contínua tal que $g$ restrita a $S^{n-1}$ é a identidade. Usando o fato de que $f(x)\neq x$, traçamos um segmento de reta saindo de $f(x)$, indo até o bordo de $D{n}$, passando por $x$. O ponto em que  esse segmento intercepta $S^{n-1}$ chamaremos de g(x). É fácil ver que se $x\in S^{n-1}$ então $g(x)=x$. Podemos provar também que $g$ definida desse modo é contínua. 
+
+%Agora que construímos $g$, podemos ver que o seguinte diagrama
+
+%\begin{displaymath}
+%\xymatrix{
+%& D^{n+1}\ar@{->}^{g}[dr]& \\
+%S^n\ar@{->}^{i}[ur]\ar@{->}^{\textrm{Id}}[rr]& & S^n}
+%\end{displaymath}
+
+%\medskip
+
+%\noindent comuta, isto é $g\circ i= \textrm{Id}$. A partir deste diagrama, podemos aplicar a Homologia $H_{n-1}$ e obter
+
+%\begin{displaymath}
+%\xymatrix{
+%& H_{n-1}(D^{n+1})\ar@{->}^{H_{n-1}(g)}[dr]& \\
+%H_{n-1}(S^n)\ar@{->}^{H_{n-1}(i)}[ur]\ar@{->}^{H_{n-1}(\textrm{Id})}[rr]& & H_{n-1}(S^n)}
+%\end{displaymath}
+
+%Como o outro diagrama comutava, pela proposição \ref{prp:composicao} este também comuta. Temos portanto $H_{n-1}(g)\circ H_{n-1}(i)=H_{n-1}(\textrm{Id})$. Só que, pelo lema \ref{lem:homologa do disco} temos que $H_{n-1}(\textrm{Id})=0$. Contudo, pelo lema \ref{lem:homologa da esfera} temos que $H_{n-1}(S^{n-1})=\mathbb{Z}\neq 0$, portanto não podemos ter $H_{n-1}(\textrm{Id})=0$.
+%\end{IEEEproof}
+%Concluímos assim a prova do teorema do ponto fixo de Brouwer. Podemos adaptar essa prova a qualquer outro subconjunto de $R^n$ isomorfo a $D^n$, ou seja, qualquer conjunto compacto sem buracos.
+
+%Outras demonstrações para este teorema podem ser encontradas em ~\cite{pontofixo}.
+\section{Agradecimentos}
+
+Eu gostaria de agradecer ao meu orientador Paulo A. Martin por todo o incentivo neste projeto e na Iniciação Científica como um todo e ao meu colega Marcel H. Sobrinho que me ajudou nesta tarefa. %Gostaria de agradecer também ao IME por abrir o espaço para mostrarmos nosso trabalho.
+
+
+%******************************************************************************
+
+%%   +-------------+
+%%   | REFERÊNCIAS |
+%%   +-------------+
+
+\bibliographystyle{IEEEtran}
+
+\bibliography{bibliografia}
+
+%% Aqui, supõe-se que o arquivo de bibliografia contendo as referências
+%% do artigo chama-se Modelo.bib. Renomeie-o apropriadamente (mas sem
+%% mudar a extensão "bib")!
+
+%******************************************************************************
+
+\end{document}
