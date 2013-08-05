@@ -1,182 +1,225 @@
-\documentclass[a4paper, oneside, final]{scrartcl}
-\usepackage [brazil]{babel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plasmati Graduate CV
+% LaTeX Template
+% Version 1.0 (24/3/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati (alessandro.plasmati@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template needs to be compiled with XeLaTeX.
+% The main document font is called Fontin and can be downloaded for free
+% from here: http://www.exljbris.com/fontin.html
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{t1enc}
-\usepackage[utf8]{inputenc}
 
-\usepackage{soulutf8}
-\usepackage{scrpage2}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage{tabularx,colortbl}
+\documentclass[a4paper,10pt]{article} % Default font size and paper size
 
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\usepackage{fontspec} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
 
-\pagestyle{scrheadings}
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
 
-\renewcommand{\headfont}{\normalfont\rmfamily\scshape}
-\newcommand{\gray}{\rowcolor[gray]{.90}}
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
 
-% define footer
-\cofoot{\so{Sta. Rosa Junior street, 83. apt. 31}\\
-\so{Vila Pirajussara. S\~{a}o Paulo-SP, Brazil}\\
-\so{ {\Large\Letter} jaodsilv@linux.ime.usp.br}\\
-\so{ {\Large\Telefon} +55 (11)8737-0300}}
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be 
+\usepackage{fullpage}
+% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
 
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
 
 \begin{document}
 
-\begin{center}
+\pagestyle{empty} % Removes page numbering
 
-\textsc{\Huge{\so{Jo\~{a}o Marco Maciel da Silva}}}
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\par{\centering{\Huge \textsc{João Marco Maciel da Silva}}\bigskip\par} % Your name
+
+\section{Personal Data}
+
+\begin{tabular}{rl}
+\textsc{Place and Date of Birth:} & Brasilia-DF, Brazil | 25 May 1988 \\
+\textsc{Address:} & Eng. Heitor Antonio Eiras Garcia Avenue, 125. apt. 54.\\& Vila Pirajussara. São Paulo-SP, Brazil \\
+\textsc{Phone:} & +55 11 98737 0300\\
+\textsc{email:} & \href{mailto:joaodasisilva@gmail.com}{joaodasisilva@gmail.com}\\
+& \href{mailto:jaodsilv@linux.ime.usp.br}{jaodsilv@linux.ime.usp.br}\\
+\textsc{Web Page:} & \href{http://linux.ime.usp.br/jaodsilv}{http://linux.ime.usp.br/jaodsilv}\\
+\end{tabular}
 
 
-\section{Experiences}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE 
+%----------------------------------------------------------------------------------------
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Period    & \textbf{January 2008 --- January 2009}\\
-\gray Employer  & \textbf{DepCult} \hfill S\~{a}o Jos\'{e} dos Campos/SP, Brazil\\
-\gray Job Title & \textbf{Member}\\
-       & cultural events logistics at \textit{Cultural Department} of 
-       \textit{Centro Acad\^{e}mico Santos Dummont}. Voluntary.\\
+\section{Work Experience}
 
-\end{tabularx}
+\begin{tabular}{r|p{11cm}}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Period    & \textbf{June 2008 --- January 2009}\\
-\gray Employer  & \textbf{DepCult} \hfill S\~{a}o Jos\'{e} dos Campos/SP, Brazil\\
-\gray Job Title & \textbf{Finance Director}\\
-       & finance director at \textit{Cultural Department} of 
-       \textit{Centro Acad\^{e}mico Santos Dummont}. Voluntary. \\
+\textsc{Sep 2010-Jan 2013} & Developer at \textbf{CCSL}, São Paulo-SP, Brazil \emph{}\\
+& \footnotesize{Languages: Java, Ruby}\\
+       & \footnotesize{Developing Kalibro and Mezuro projects at CCSL. Research in code metrics in FLOSS.}
+\multicolumn{2}{c}{} \\
 
-\end{tabularx}
+%------------------------------------------------
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Period    & \textbf{January 2009 --- July 2010}\\
-\gray Employer  & \textbf{DepCult} \hfill S\~{a}o Jos\'{e} dos Campos/SP, Brazil\\
-\gray Job Title & \textbf{Council member}\\
-       & Council member at \textit{Cultural Department} of 
-       \textit{Centro Acad\^{e}mico Santos Dummont}. Voluntary. \\
-
-\end{tabularx}
-
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Period    & \textbf{January 2010 --- July 2010}\\
-\gray Employer  & \textbf{RedeCASD} \hfill S\~{a}o Jos\'{e} dos Campos/SP, Brazil\\
-\gray Job Title & \textbf{IT Member}\\
-\gray Languages & Bash Script, C, C++\\
-       & Operation, development and maintenance of the students intranet at ITA(Aeronautics Institute of
+\textsc{Jan 2010-Jul 2010} & IT member at \textbf{RedeCASD}, São José dos Campos-SP, Brazil \emph{}\\
+& \footnotesize{Languages: Bash Script, C, C++}\\
+       & \footnotesize{Operation, development and maintenance of the students intranet at ITA(Aeronautics Institute of
        Technology-SP, Brazil), this had about 7 Ubuntu servers and about 600 computers with different
-       OS(Windows, MacOS, UNIX, Linux and others). Voluntary.\\
-\end{tabularx}
+       OS(Windows, MacOS, UNIX, Linux and others). Voluntary.}
+\multicolumn{2}{c}{} \\
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Period    & \textbf{September 2010 --- Actual}\\
-\gray Employer  & \textbf{CCSL} \hfill S\~{a}o Paulo/SP, Brazil\\
-\gray Job Title & \textbf{Trainee}\\
-\gray Languages & Java, Ruby\\
-       & Developing Kalibro and Mezuro projects at CCSL. Research in code metrics in FLOSS.
-\end{tabularx}
+%------------------------------------------------
 
-\section{Skills}
+\textsc{Jan 2009-Jul 2010} & Council member at \textbf{DepCult}, São José dos Campos-SP, Brazil \emph{}\\
+& \footnotesize{Council member at \emph{Cultural Department} of 
+       \emph{Centro Acad\^{e}mico Santos Dummont}. Voluntary.}
+\multicolumn{2}{c}{} \\
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-\gray Languages    & Java, C, C++, Ruby, Scala, Erlang, HTML, xHTML, XML, SQL, UML\\
-\gray Java & Application Servers: JBoss, TomCat\\
-\gray specific & Frameworks: JSF2, Hibernate, Struts2, VRaptor3\\
-\gray technolo- & Extreme programming tools: JMeter, JUnit, Maven, Ant\\
-\gray gies & Technologies: JPA2, EJB3.1, JMX, JMS, Swing, LOG4J, JDBC, JSP, JSTL, JAX-WS, JAX-RS, JTA, JTS\\
-\gray Other & DataBase:  MySQL\\
-\gray & Operationg Systems: All Debian-Based Linux Distros, Windows 98/XP/Vista/7\\
-\end{tabularx}
+
+%------------------------------------------------
+
+\textsc{Jun 2008-Jan 2009} & Finance Director at \textbf{DepCult}, São José dos Campos-SP, Brazil \emph{}\\
+& \footnotesize{finance director at \emph{Cultural Department} of 
+       \emph{Centro Acad\^{e}mico Santos Dummont}. Voluntary.}
+\multicolumn{2}{c}{}\\
+
+
+%------------------------------------------------
+
+\textsc{Jan 2008-Jan 2009} & Member at \textbf{DepCult}, São José dos Campos-SP, Brazil \emph{}\\
+& \footnotesize{cultural events logistics at \emph{Cultural Department} of \emph{Centro Acad\^{e}mico Santos Dummont}. Voluntary.}\\
+
+\end{tabular}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
 
 \section{Education}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2011--2014 & Mathematics and Statistics Institute of University of S\~{a}o Paulo (IME-USP)\\
-    & \hfill S\~{a}o Paulo/SP, Brazil\\
-    & Computer Science Bachelor\\
-\end{tabularx}
+\begin{tabular}{r|p{11cm}}
+\textsc{Feb} 2011-\textsc{Dec} 2014& Bachelor Degree in \textsc{}\textsc{Computer Science} \\& \normalsize\textbf{University of São Paulo}, São Paulo-SP, Brazil
+\multicolumn{2}{c}{}\\
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2008--2010 & Aeronautics Institute of Technology(ITA)\\
-    & \hfill S\~{a}o Jos\'{e} dos Campos/SP, Brazil\\
-    & Drop out from Electronics Engineering\\
-\end{tabularx}
+%------------------------------------------------
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2003--2005 & GGE High School and Course\\
-    & \hfill Recife/PE, Brazil\\
-    & Normal High School Diploma\\
-\end{tabularx}
+\textsc{Feb} 2013-\textsc{Jun} 2013& Exchange Semester\\
+    & \textbf{Università della Svizzera Italiana}, Lugano-TI, Switzerland
+\multicolumn{2}{c}{}\\
+    
+%------------------------------------------------
+
+\textsc{Jan} 2003-\textsc{Dec} 2005& Normal High School Diploma\\
+  & \textbf{GGE High School and Course}, Recife-PE, Brazil
+\end{tabular}
 
 \section{Other Courses}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2009 & CPORAer \hfill São José dos Campos/SP, Brazil\\
-    & preparatory course for airforce's reserve officers\\
-\end{tabularx}
+\begin{tabular}{r|p{11cm}}
+2011 & \textbf{K19 Trainings}, S\~ao Paulo-SP, Brazil\\
+    & \footnotesize{Web Development with JSF2 and JPA} training\\
+    & \footnotesize{Persistence with JPA2 and Hibernate} training\\
+    & \footnotesize{Advanced Web Development with JSF2, EJB3.1 and CDI} training\\
+    & \footnotesize{System Integration with Webservices, JMS and EJB} training
+    \multicolumn{2}{c}{}\\
+    
+2009 & \textbf{Caelum Trainings}, S\~{a}o Paulo-SP, Brazil\\
+    & \footnotesize{Java and OO} training\\
+    & \footnotesize{Java Laboratory with Tests, XML and Design Patterns} training\\
+    & \footnotesize{Java for WEB Development} training.
+    \multicolumn{2}{c}{}\\
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2009 & Caelum Trainings \hfill S\~{a}o Paulo/SP, Brazil\\
-    & \textit{Java and OO} training\\
-    & \textit{Java Laboratory with Tests, XML and Design Patterns} training\\
-    & \textit{Java for WEB Development} training.\\
-\end{tabularx}
+2009 & \textbf{CPORAer}, São José dos Campos-SP, Brazil\\
+    & \footnotesize{Preparatory course for airforce's reserve officers}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2011 & K19 Trainings \hfill S\~ao Paulo/SP, Brazil\\
-    & \textit{Web Development with JSF2 and JPA} training\\
-    & \textit{Persistence with JPA2 and Hibernate} training\\
-    & \textit{Advanced Web Development with JSF2, EJB3.1 and CDI} training\\
-    & \textit{System Integration with Webservices, JMS and EJB} training\\
-\end{tabularx}
+\end{tabular}
 
-%\section{Publications}
-\section{Events, Congress and Conferences}
-
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2011 & September \textit{MiniPLOP Brasil 2011}\\
-    & October \textit{International Conference On Open Source Systems 2011}\\
-    & November \textit{RubyConf Brazil 2011}\\
-\end{tabularx}
-
-\section{Personal Info}
-
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    & Born in Brasilia/DF, Brazil\\
-    & Birthday: 25th of may of 1988\\
-    & Present Citizenship: Brazilian\\
-    & Marital Status: Single\\
-\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	LANGUAGES
+%----------------------------------------------------------------------------------------
 
 \section{Languages}
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    & Portuguese, English\\
-\end{tabularx}
+\begin{tabular}{rl}
+\textsc{English:} & Fluent\\
 
-\section{Sports and Other Activities}
+\textsc{Portuguese:} & Mothertongue\\
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-2011--2012 & GTUG-USP - Member of a study group for google technologies\\
-2011--2012 & OBMU-USP - Founding member of a study group for Mathematics Competitions\\
-2011--2012 & RC - Class Representant\\
-2011--2012 & Boxing training\\
-2011--2012 & Running training\\
-2008--2012 & Baseball training\\
-2008--2012 & Amateur photographer\\
-2010--2010 & Brazilian Jiu-Jitsu\\
-2008--2010 & Kung-Fu Eagle Claw Style\\
-2002--2007 & Kung-Fu Fei Hok Phai Style\\
-\end{tabularx}
+\textsc{Italian:} & Basic Knowledge\\
+\end{tabular}
 
-\section{Interests}
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS 
+%----------------------------------------------------------------------------------------
 
-\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
-    & Photography, reading, rock music, baseball, boxing, martial arts, math problems, algorithm problems, 
-    computers \& microelectronics\\
-\end{tabularx}
+\section{Computer Skills}
 
-\end{center}
+\begin{tabular}{r|p{11cm}}
+Languages: & Java, C, C++, Ruby, Scala, Erlang, HTML,\\& JavaScript, Bash, Python
+\multicolumn{2}{c}{}\\
+
+Application Servers and Web Servers: & JBoss AS, TomCat
+\multicolumn{2}{c}{}\\
+
+Java Frameworks, Tools and Specifications: & JSF2, Hibernate, Struts2, JUnit, Maven, Ant,\\& JPA2, EJB3.1, JMX, JMS, Swing, LOG4J, JDBC, JSP,\\& JSTL, JAX-WS, JAX-RS, JTA, JTS
+\multicolumn{2}{c}{}\\
+
+Other Frameworks: & Rails, Savon, RUnit, Cucumber, Lift
+\multicolumn{2}{c}{}\\
+
+DataBase: & MySQL
+\multicolumn{2}{c}{}\\
+
+Operationg Systems: & All Debian-Based Linux Distros, ArchLinux,\\& Slackware, Windows 98/XP/Vista/7, MAC OS\\& X Mountain Lion.
+
+
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	EVENTS CONGRESS CONFERENCES
+%----------------------------------------------------------------------------------------
+\section{Events, Congress and Conferences}
+
+\begin{tabular}{rl}
+\textsc{Jul} 2012 & \textbf{FISL13} - Lecture\\
+
+\textsc{Nov} 2011 & \textbf{RubyConf Brazil 2011} - Spectator\\
+\textsc{Oct} 2011 & \textbf{International Conference On Open Source Systems 2011} - Poster Presentation\\
+\textsc{Sep} 2011 & \textbf{MiniPLOP Brazil 2011} - Participant
+
+
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS AND ACTIVITIES
+%----------------------------------------------------------------------------------------
+
+\section{Interests and Activities}
+
+Math olympiad problems, technology, reading, photography, music, arts,\\
+boxing, martial arts, baseball, football, learn.
+
+%----------------------------------------------------------------------------------------
+
 \end{document}
