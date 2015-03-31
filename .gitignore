@@ -9,4 +9,12 @@ curriculum_en.log
 curriculum_en.pdf
 curriculum_en.tex.backup
 curriculum_en.tex~
-
+curriculum/curriculum.bbl
+curriculum/curriculum.blg
+curriculum/curriculum.fdb_latexmk
+curriculum/curriculum.fls
+curriculum/curriculum.out
+curriculum/curriculum.tex~
+curriculum/curriculum_en.out
+curriculum/texput.log
+*.*~
