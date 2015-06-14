@@ -199,6 +199,8 @@ alias lamppSt='sudo /opt/lampp/lampp status'
 
 alias railss='rails s'
 alias hades='cd ~/workspace/Hades'
+alias master='git checkout master'
+alias rebase='git checkout master;git pull origin master;git checkout $1; git rebase master'
 
 source ~/.profile
 
