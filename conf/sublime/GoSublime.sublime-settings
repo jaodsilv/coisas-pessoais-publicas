@@ -1,0 +1,4 @@
+{
+	"fmt_tab_width": 4,
+	"fmt_cmd": ["gofmt"],
+}

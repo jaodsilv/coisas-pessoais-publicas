@@ -45,13 +45,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo yum)
+plugins=(git sudo yum rails ruby gradle rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/Scripts:/home/joao/.rvm/gems/ruby-2.1.2@sigeco/bin:/home/joao/.rvm/gems/ruby-2.1.2@global/bin:/home/joao/.rvm/rubies/ruby-2.1.2/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/home/joao/bin:/usr/local/sbin:/usr/sbin"
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/Scripts:$HOME/.rvm/gems/ruby-2.1.2@sigeco/bin:$HOME/.rvm/gems/ruby-2.1.2@global/bin:$HOME/.rvm/rubies/ruby-2.1.2/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:$HOME/bin:/usr/local/sbin:/usr/sbin:$HOME/apps"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -59,7 +59,7 @@ export PATH="$PATH:$HOME/.rvm/bin:$HOME/Scripts:/home/joao/.rvm/gems/ruby-2.1.2@
 
 # Preferred editor for local and remote sessions
 #if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 #fi
@@ -131,6 +131,7 @@ alias du='du -c -h'
 alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias ping='ping -c 5'
+alias pingg='ping -c 5 www.google.com'
 alias dmesg='dmesg -HL'
 # }}}
 
@@ -183,6 +184,22 @@ alias :x=' exit'
 alias cd..='cd ..'
 # }}}
 
-alias pingg='ping -c 3 www.google.com'
+## MySQL alias
+alias mysqlStart='sudo service mysqld start'
+alias mysqlSt='sudo service mysqld status'
+alias mysqlStop='sudo service mysqld stop'
+
+## XAMPP
+alias xamppStart='sudo /opt/lampp/lampp start'
+alias xamppStop='sudo /opt/lampp/lampp stop'
+alias xamppSt='sudo /opt/lampp/lampp status'
+alias lamppStart='sudo /opt/lampp/lampp start'
+alias lamppStop='sudo /opt/lampp/lampp stop'
+alias lamppSt='sudo /opt/lampp/lampp status'
+
+alias railss='rails s'
+alias hades='cd ~/workspace/Hades'
+
+source ~/.profile
 
 fortune
